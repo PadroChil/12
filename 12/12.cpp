@@ -5,9 +5,36 @@ int main()
 {
     SetConsoleOutputCP(1251);
     
-    //Задача 2
+    std::cout << "Задача 1\n";
+     double rast, time, speed;
+     while (true)
+     {
+         std::cout << "\nВведите растояние до аэропорта  ";
+         std::cin >> rast;
+         if (rast <= 0)
+         {
+             break;
+         }
 
-   /* int starthours, startminutes, startseconds;
+         std::cout << "\nВведите время за которое нужно добраться до аэропорта (в часах)  ";
+         std::cin >> time;
+         if (time == 0)
+         {
+             break;
+         }
+         speed = rast / time;
+
+
+         std::cout << "\nСкорость с которой нужно ехать равна " << speed << "км/ч\n";
+         if (true)
+         {
+             break;
+         }
+     }
+         
+     std::cout << "Задача 2\n";
+
+    int starthours, startminutes, startseconds;
     int endhours, endminutes, endseconds;
 
     std::cout << "Введите время начала поездки (часы минуты секунды): ";
@@ -33,37 +60,55 @@ int main()
 
     std::cout << "\nДлительность поездки: " << durationminutes << " минут(ы).\n";
     std::cout << "\nОбщая стоимость: " << totalcost << " гривен.\n";
-    */
+    
 
-    //Задача 3
+    std::cout << "Задача 3\n";
 
-     double distance, fuel100km;
-     double benzene1, benzene2, benzene3;
+     float distance, fuel100km;
+     float benzene1, benzene2, benzene3;
 
-     std::cout << "Введите расстояние поездки (км): ";
-     std::cin >> distance;
+	 while (true)
+	 {
 
-     std::cout << "Введите расход бензина на 100 км: ";
-     std::cin >> fuel100km;
 
-     std::cout << "Введите стоимость первого вида бензина (гривен): ";
-     std::cin >> benzene1;
+		 std::cout << "Введите расстояние поездки (км): ";
+		 std::cin >> distance;
+         if (distance <= 0)
+         {
+             std::cout << "Ошибка!" << "\n";
+             continue;
+         }
 
-     std::cout << "Введите стоимость второго вида бензина (гривен): ";
-     std::cin >> benzene2;
+		 std::cout << "Введите расход бензина на 100 км: ";
+		 std::cin >> fuel100km;
+         if (fuel100km <= 0)
+         {
+             std::cout << "Ошибка!" << "\n";
+             continue;
+         }
 
-     std::cout << "Введите стоимость третьего вида бензина (гривен): ";
-     std::cin >> benzene3;
+		 std::cout << "Введите стоимость первого вида бензина: ";
+		 std::cin >> benzene1;
 
-     double cost1 = (distance * fuel100km / 100) * benzene1;
-     double cost2 = (distance * fuel100km / 100) * benzene2;
-     double cost3 = (distance * fuel100km / 100) * benzene3;
+		 std::cout << "Введите стоимость второго вида бензина: ";
+		 std::cin >> benzene2;
 
-     std::cout << "Стоимость для первого вида бензина: " << benzene1 << " руб.\n";
-     std::cout << "Стоимость для второго вида бензина: " << benzene2 << " руб.\n";
-     std::cout << "Стоимость для третьего вида бензина: " << benzene3 << " руб.\n";
+		 std::cout << "Введите стоимость третьего вида бензина: ";
+		 std::cin >> benzene3;
 
+		 float cost1 = (distance * fuel100km / 100) * benzene1;
+		 float cost2 = (distance * fuel100km / 100) * benzene2;
+		 float cost3 = (distance * fuel100km / 100) * benzene3;
+
+
+         std::cout << "Стоимость 1 топлива на " << distance << " км: " << cost1 << "\n";
+         std::cout << "Стоимость 2 топлива на " << distance << " км: " << cost2 << "\n";
+         std::cout << "Стоимость 3 топлива на " << distance << " км: " << cost3 << "\n";
+         break;
+	 }
 
 
     return 0;
 }
+
+
